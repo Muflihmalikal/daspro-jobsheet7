@@ -5,7 +5,7 @@ public class Tugas1_17 {
         Scanner sc = new Scanner(System.in);
         int terjual, tottiket = 0;
         int tiket = 50000;
-        double totalharga = 0, totsehari = 0;
+        double totalharga = 0, diskon, totsehari = 0;
         String namaPelanggan;
         do {
             System.out.print("Masukkan nama pelanggan (ketik 'cukup' untuk Rekap): ");
@@ -22,10 +22,12 @@ public class Tugas1_17 {
                 continue;
             }
             if (terjual > 10) {
-                totalharga = (tiket * terjual) * 0.15;
+                diskon = tiket * 0.15 * terjual;
+                totalharga = (tiket * terjual) - diskon;
                 System.out.println("Anda mendapatkan diskon 15%");
             } else if (terjual > 4 && terjual < 10) {
-                totalharga = (tiket * terjual) * 0.1;
+                diskon = tiket * 0.1 * terjual;
+                totalharga = (tiket * terjual) - diskon;
                 System.out.println("Anda mendapatkan diskon 10%");
             } else {
                 totalharga = tiket * terjual;
