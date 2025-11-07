@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Tugas1_17 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int terjual;
+        int terjual, tottiket = 0;
         int tiket = 50000;
         double totalharga = 0, totsehari = 0;
         String namaPelanggan;
@@ -22,7 +22,7 @@ public class Tugas1_17 {
                 continue;
             }
             if (terjual > 10) {
-                totalharga = (tiket * terjual) * 0.5;
+                totalharga = (tiket * terjual) * 0.15;
                 System.out.println("Anda mendapatkan diskon 15%");
             } else if (terjual > 4 && terjual < 10) {
                 totalharga = (tiket * terjual) * 0.1;
@@ -32,8 +32,10 @@ public class Tugas1_17 {
             }
             System.out.println("Total bayar: Rp " + totalharga);
             totsehari += totalharga;
+            tottiket += terjual;
             sc.nextLine();// untuk mengahapus newline
         } while (true);
+        System.out.println("Total Tiket Terjual : " + tottiket);
         System.out.println("Total pendapatan hari ini: Rp " + totsehari);
         sc.close();
     }
